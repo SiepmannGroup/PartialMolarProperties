@@ -1,0 +1,54 @@
+obsolete:
+	analysis.f
+	atomtype.f
+	chempt.f
+	coruz.f
+	exzeo.f
+	exzeof.f
+	exzeot.f
+	forcefield.f
+	jtrim.f
+	mbessel.f
+	mimage.f
+	nrtab.f
+	pgrid.f
+	qqcheck.f
+	readRES.f
+	setpbc.f
+	suzeo.f
+	test1.f
+	testupdate.f
+	thermopress.f
+	trim_swap.f
+	zeocoord.f
+	beaddat.inc
+	gor.inc
+	
+added:
+	global_data.f
+	var_type.f
+	const_phys.f
+	const_math.f
+	util_math.f
+	util_string.f
+	util_files.f
+	util_timings.f
+	pbc.f
+	zeolite.f
+
+changes:
+	Automatically set translational and rotational maximum displacements to be the average of those in x-, y-, z- directions if iratio is greater than nstep (most likely production runs)
+	
+	No longer generate 10 random numbers at the beginning and output them to disk
+	
+	Increase the precision of qqfact (now 1.67125)
+	
+	Unify the use of Pi (defined as onepi, twopi, fourpi) in a central place (const_math.f), and related quantities like raddeg, degrad
+
+	Standardize the KIND property of variable, determined using select_int_kind and select_real_kind with desired precision and range
+	
+	Change to Fortran 90 (or later) standard/convention: convert common blocks to modules, convert from fixed form to free form, "inline" format, remove goto and line numbering in favor of exit/cycle and labeled structures
+
+	Use cmake instead of (gnu) make
+
+	Use autotool/autoconf toolchains to manage Makefile generation
