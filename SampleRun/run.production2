@@ -1,0 +1,990 @@
+Program started at 2019-06-16 20:05:35.813
+Number of processors: 1
+Threads per processor: 1
+
+MCCCS topmon (branch: master)
+Commit hash: 48abdd5
+Build on host: metropolis.chem.umn.edu
+Preprocessor definitions: __DOUBLE_PRECISION__;__USEOWN__
+Using Intel compiler: /share/apps/intel/composer_xe_2013.1.117/bin/intel64/ifort
+
+ run_num: 1    
+ suffix: a
+ L_movie_xyz:  F
+ L_movie_pdb:  T
+
+***** PROGRAM  =  THE MAGIC BLACK BOX *****
+NPT Gibbs ensemble
+Using periodic boundaries in x y z
+3-dimensional periodic box
+Particle coordinates are folded into central box
+Additional center-of-mass cutoff on computed rcmu
+CBMC simultaneously grows all beads conected to the same bead
+   with bond lengths/angles generated from Gaussian distribution
+Program will call explct() for explicit-hydrogen models
+Dual Cutoff Configurational-bias Monte Carlo
+Coulombic interactions will NOT be considered during CBMC growth (added only in the final acceptance test)
+Coulombic inter- and intra-molecular interactions will be calculated
+   using (neutral-)group-based cutoff
+   with additional tail corrections
+Lorentz-Berthelot combining rules apply
+ L_spline:  F
+ L_linear:  F
+*******************************************
+
+NAMELIST MC_SHARED
+------------------------------------------
+Random number seed: 1
+number of boxes in the system: 2
+number of molecule types: 3
+number of chains: 1825
+number of cycles: 25000
+ iratio: 100000
+minimum cutoff (rmin):   2.000 [Ang]
+ softcut:  100.0000000    
+Write checkpoint file every 1800 seconds, and keep the last 1 copies
+ linit:  F
+ lreadq:  F
+
+NAMELIST ANALYSIS
+------------------------------------------
+ iprint: 1000
+ imv: 1000
+ iblock: 1000
+ iratp: 10
+ idiele: 10000000
+ iheatcapacity: 10000000
+ ianalyze: 10000000
+ nbin: 1
+ lrdf:  F
+ lintra:  F
+ lstretch:  F
+ lgvst:  F
+ lbend:  F
+ lete:  F
+ lrhoz:  F
+ bin_width:  0.200000000    
+ lucall:  F
+
+SECTION SIMULATION_BOX
+------------------------------------------
+Box 1:   55.000 x   55.000 x   55.000
+   rcut: 14.000 [Ang], kalp:  0.250
+   neighbor list cutoff (rcutnn):  0.000
+   number of dimensions that are isotropic: 3
+   lsolid:  F, lrect:  F, lideal:  F, ltwice:  F
+   temperature:  333.000 [K]
+   external pressure:   16.2200000     [MPa]
+   initial number of chains of each type:   605  315  118
+   Ghost particles: 0
+   initial number of chains in x, y and z directions: 10 x 10 x 10
+   initial rotational displacement: 0, inimix: 0, zshift:   0.0, dshift:   2.500
+Box 2:   55.000 x   55.000 x   55.000
+   rcut: 14.000 [Ang], kalp:  0.250
+   neighbor list cutoff (rcutnn):  0.000
+   number of dimensions that are isotropic: 3
+   lsolid:  F, lrect:  F, lideal:  F, ltwice:  F
+   temperature:  333.000 [K]
+   external pressure:   16.2200000     [MPa]
+   initial number of chains of each type:   671  109  7
+   Ghost particles: 0
+   initial number of chains in x, y and z directions: 10 x 10 x 10
+   initial rotational displacement: 15, inimix: 0, zshift:   0.0, dshift:   8.000
+
+NUMBER OF MOLECULES OF EACH TYPE
+ number of chains of each type:   1276  424  125
+
+SECTION MOLECULE_TYPE
+------------------------------------------
+molecule type:  1 PEC1      
+   number of units: 1
+   number of units for CBMC growth: 1
+   number of carbons for EH alkane: 1
+   maximum number of units for CBMC: 1
+   maximum number of interior segments for SAFE-CBMC regrowth: 0
+   number of atoms in a ring (if lring=.true.): 0
+   iurot: 0, isolute: 10000000, lelect:  F, lring:  F, lrigid:  F, lbranch:  F, lsetup:  F, lq14scale:  F, qscale: 0.5
+
+   bead 1: bead type 4 [C], charge leader 1
+molecule type:  2 PEC4      
+   number of units: 4
+   number of units for CBMC growth: 4
+   number of carbons for EH alkane: 4
+   maximum number of units for CBMC: 4
+   maximum number of interior segments for SAFE-CBMC regrowth: 0
+   number of atoms in a ring (if lring=.true.): 0
+   iurot: 0, isolute: 10000000, lelect:  F, lring:  F, lrigid:  F, lbranch:  F, lsetup:  F, lq14scale:  F, qscale: 0.5
+
+   bead 1: bead type 1 [C], charge leader 1
+      bonded to bead 2, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 2 with bead 3, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 2 and 3 with bead 4, torsional type: 1
+
+   bead 2: bead type 2 [C], charge leader 2
+      bonded to bead 1, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 3, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 3 with bead 4, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+
+   bead 3: bead type 2 [C], charge leader 3
+      bonded to bead 2, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 4, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 2 with bead 1, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+
+   bead 4: bead type 1 [C], charge leader 4
+      bonded to bead 3, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 3 with bead 2, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 3 and 2 with bead 1, torsional type: 1
+molecule type:  3 PEC10     
+   number of units: 10
+   number of units for CBMC growth: 10
+   number of carbons for EH alkane: 10
+   maximum number of units for CBMC: 10
+   maximum number of interior segments for SAFE-CBMC regrowth: 0
+   number of atoms in a ring (if lring=.true.): 0
+   iurot: 0, isolute: 10000000, lelect:  F, lring:  F, lrigid:  F, lbranch:  F, lsetup:  F, lq14scale:  F, qscale: 0.5
+
+   bead 1: bead type 1 [C], charge leader 1
+      bonded to bead 2, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 2 with bead 3, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 2 and 3 with bead 4, torsional type: 1
+
+   bead 2: bead type 2 [C], charge leader 2
+      bonded to bead 1, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 3, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 3 with bead 4, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 3 and 4 with bead 5, torsional type: 1
+
+   bead 3: bead type 2 [C], charge leader 3
+      bonded to bead 4, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 2, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 2 with bead 1, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 4 with bead 5, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 4 and 5 with bead 6, torsional type: 1
+
+   bead 4: bead type 2 [C], charge leader 4
+      bonded to bead 3, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 5, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 3 with bead 2, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 5 with bead 6, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 3 and 2 with bead 1, torsional type: 1
+      torsional interaction through 5 and 6 with bead 7, torsional type: 1
+
+   bead 5: bead type 2 [C], charge leader 5
+      bonded to bead 4, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 6, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 4 with bead 3, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 6 with bead 7, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 4 and 3 with bead 2, torsional type: 1
+      torsional interaction through 6 and 7 with bead 8, torsional type: 1
+
+   bead 6: bead type 2 [C], charge leader 6
+      bonded to bead 5, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 7, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 5 with bead 4, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 7 with bead 8, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 5 and 4 with bead 3, torsional type: 1
+      torsional interaction through 7 and 8 with bead 9, torsional type: 1
+
+   bead 7: bead type 2 [C], charge leader 7
+      bonded to bead 6, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 8, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 6 with bead 5, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 8 with bead 9, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 6 and 5 with bead 4, torsional type: 1
+      torsional interaction through 8 and 9 with bead 10, torsional type: 1
+
+   bead 8: bead type 2 [C], charge leader 8
+      bonded to bead 7, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 9, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 7 with bead 6, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      bending interaction through 9 with bead 10, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 7 and 6 with bead 5, torsional type: 1
+
+   bead 9: bead type 2 [C], charge leader 9
+      bonded to bead 8, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 10, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 8 with bead 7, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 8 and 7 with bead 6, torsional type: 1
+
+   bead 10: bead type 1 [C], charge leader 10
+      bonded to bead 9, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 9 with bead 8, bending type: 1, bending angle:  114.000, k/2:   31250.0000    
+      torsional interaction through 9 and 8 with bead 7, torsional type: 1
+
+MOLECULAR MASS:      16.04246     58.12320    142.28460
+
+SPECIAL INTERACTION RULES
+------------------------------------------
+  Total: 0 exclusion rules for intermolecular interactions
+
+  Total: 0 inclusion rules for intramolecular interactions
+
+  Total: 0 special rules for intramolecular 1-5 OH interactions
+
+SECTION UNIFORM_BIASING_POTENTIALS
+------------------------------------------
+Molecule type, biasing potential 1 through nbox [K]: 
+     0.000     0.000
+     0.000     0.000
+     0.000     0.000
+
+SECTION SPECIFIC_ATOM_TRANSL
+------------------------------------------
+
+Molecule type: 1
+
+LJ INCLUSION TABLE
+       1
+   1   F
+
+CHARGE INCLUSION TABLE
+       1
+   1   F
+
+1-4 LJ SCALING FACTORS
+             1
+      1  1.000
+
+1-4 CHARGE SCALING FACTORS
+             1
+      1  1.000
+
+Molecule type: 2
+
+LJ INCLUSION TABLE
+       1   2   3   4
+   1   F   F   F   F
+   2   F   F   F   F
+   3   F   F   F   F
+   4   F   F   F   F
+
+CHARGE INCLUSION TABLE
+       1   2   3   4
+   1   F   F   F   F
+   2   F   F   F   F
+   3   F   F   F   F
+   4   F   F   F   F
+
+1-4 LJ SCALING FACTORS
+             1      2      3      4
+      1  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000
+
+1-4 CHARGE SCALING FACTORS
+             1      2      3      4
+      1  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000
+
+Molecule type: 3
+
+LJ INCLUSION TABLE
+       1   2   3   4   5   6   7   8   9  10
+   1   F   F   F   F   T   T   T   T   T   T
+   2   F   F   F   F   F   T   T   T   T   T
+   3   F   F   F   F   F   F   T   T   T   T
+   4   F   F   F   F   F   F   F   T   T   T
+   5   T   F   F   F   F   F   F   F   T   T
+   6   T   T   F   F   F   F   F   F   F   T
+   7   T   T   T   F   F   F   F   F   F   F
+   8   T   T   T   T   F   F   F   F   F   F
+   9   T   T   T   T   T   F   F   F   F   F
+  10   T   T   T   T   T   T   F   F   F   F
+
+CHARGE INCLUSION TABLE
+       1   2   3   4   5   6   7   8   9  10
+   1   F   F   F   F   F   F   F   F   F   F
+   2   F   F   F   F   F   F   F   F   F   F
+   3   F   F   F   F   F   F   F   F   F   F
+   4   F   F   F   F   F   F   F   F   F   F
+   5   F   F   F   F   F   F   F   F   F   F
+   6   F   F   F   F   F   F   F   F   F   F
+   7   F   F   F   F   F   F   F   F   F   F
+   8   F   F   F   F   F   F   F   F   F   F
+   9   F   F   F   F   F   F   F   F   F   F
+  10   F   F   F   F   F   F   F   F   F   F
+
+1-4 LJ SCALING FACTORS
+             1      2      3      4      5      6      7      8      9     10
+      1  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      5  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      6  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      7  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      8  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      9  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+     10  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+
+1-4 CHARGE SCALING FACTORS
+             1      2      3      4      5      6      7      8      9     10
+      1  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      5  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      6  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      7  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      8  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+      9  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+     10  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
+
+PAIRWISE LJ AND COULOMB INTERACTIONS
+    i    j         q0(i)         q0(j)     vvdW_1     vvdW_2 ...
+    1    1      0.000000      0.000000   392.00       3.7500    
+    1    2      0.000000      0.000000   268.57       3.8500    
+    1    4      0.000000      0.000000   481.73       3.7400    
+    2    1      0.000000      0.000000   268.57       3.8500    
+    2    2      0.000000      0.000000   184.00       3.9500    
+    2    4      0.000000      0.000000   330.04       3.8400    
+    4    1      0.000000      0.000000   481.73       3.7400    
+    4    2      0.000000      0.000000   330.04       3.8400    
+    4    4      0.000000      0.000000   592.00       3.7300    
+
+NAMELIST TRANSFER
+------------------------------------------
+lopt_bias:  F F F
+freq_opt_bias: 500
+
+NAMELIST MC_VOLUME
+------------------------------------------
+target volume acceptance ratio (tavol): 0.30
+frequency to adjust maximum volume displacement: 100000
+initial maximum volume displacement (rmvol): 1000.000
+pmvol:  0.182648402E-02
+   pmvlmt for box 1:  0.500000000    
+   pmvlmt for box 2:  1.000000000    
+nvolb: 1
+cutoff will be addressed with option:  -1
+   box pair 1: between 1 and 2,   pmvolb =   0.00000000    
+
+NAMELIST MC_SWATCH
+------------------------------------------
+pmswat:   0.00000000    
+   number of swatch pairs (nswaty): 1
+   probability of each swatch pair:  1.000000000    
+
+   swatch molecule type pairs:    2    3
+   nsampos: 1, ncut:  1  1, ncutsafe:  0  0
+   molecule 1
+   ncut 1: grow from 1, prev 0
+   molecule 2
+   ncut 1: grow from 1, prev 0
+   splist:    1    1
+   number of swatch box pairs: 1
+   probability of the swatch box pair:  1.000000000    
+   box pair:    1    2
+
+NAMELIST MC_SWAP
+------------------------------------------
+pmswap:  0.555648402E-02
+   swap probability for molecule type 1 (pmswmt):   0.2590
+   swap probability for molecule type 2 (pmswmt):   0.4410
+   swap probability for molecule type 3 (pmswmt):   1.0000
+   number of swap box pairs for molecule type 1: 1
+   pmswapb:  1.000000000    
+   box pair:    1    2
+   number of swap box pairs for molecule type 2: 1
+   pmswapb:  1.000000000    
+   box pair:    1    2
+   number of swap box pairs for molecule type 3: 1
+   pmswapb:  1.000000000    
+   box pair:    1    2
+
+NAMELIST MC_CBMC
+------------------------------------------
+CBMC inner cutoff (rcutin):  5.000 [Ang]
+AVBMC outer cutoff (rbsmax):  3.500 [Ang], inner cutoff (rbsmin):  2.500 [Ang]
+lpresim:  F
+iupdatefix: 100
+pmcb:  0.320000000    
+
+molecule type: nchoi1  nchoi nchoir nchoih nchtor nchbna nchbnb icbdir icbsta first_bead_to_swap
+            1:     16     16     16      1    100   1000   1000      0      0      1
+            2:     16     16     16      1    100   1000   1000      0      0      1
+            3:     16     16     16      1    100   1000   1000      0      0      1
+
+molecule type:    pmcbmt         pmall  avbmc_version    pmbias        pmbsmt       pmbias2         pmfix   lrig
+            1:   0.00000       0.00000              0   0.00000       0.00000       0.00000       0.00000      F
+            2:  0.360000       0.00000              0   0.00000       0.00000       0.00000       0.00000      F
+            3:  1.000000       0.00000              0   0.00000       0.00000       0.00000       0.00000      F
+
+NAMELIST MC_FLUCQ
+------------------------------------------
+target fluctuating charge acceptance ratio (taflcq): 0.95
+fluctuating charge temperature:    5.000 [K]
+initial maximum displacement for fluctuating charge moves:  0.100000000E+00
+pmflcq:   0.00000000    
+   nchoiq for each box:   1  1
+nswapq: 0
+
+molecule type:  lflucq lqtrans   pmfqmt            fqegp
+            1:       F       F   1.0000           0.0000
+            2:       F       F   1.0000           0.0000
+            3:       F       F   1.0000           0.0000
+
+NAMELIST MC_EE
+------------------------------------------
+pmexpc:   0.00000000    
+   expanded ens. prob. for molecule type 1 (pmeemt):   1.0000, lexpand:  F
+   expanded ens. prob. for molecule type 2 (pmeemt):   1.0000, lexpand:  F
+   expanded ens. prob. for molecule type 3 (pmeemt):   1.0000, lexpand:  F
+pmexpc1:   0.00000000    
+
+NAMELIST MC_SIMPLE
+------------------------------------------
+pm_atom_tra:   0.00000000    
+initial maximum displacement for atom translation:  0.100000000E-01
+target translation acceptance ratio: 0.40
+initial maximum displacement for molecule translation:  0.300000000    
+pmtra:  0.850000000    
+   translation probability for molecule type 1 (pmtrmt):   0.7350
+   translation probability for molecule type 2 (pmtrmt):   0.9460
+   translation probability for molecule type 3 (pmtrmt):   1.0000
+target rotation acceptance ratio: 0.40
+initial maximum displacement for molecule rotation:  0.400000000    
+pmrot:  1.000000000    
+   rotational probability for molecule type 1 (pmromt):   0.0000
+   rotational probability for molecule type 2 (pmromt):   0.6100
+   rotational probability for molecule type 3 (pmromt):   1.0000
+
+percentage move probabilities:
+ volume move       :    0.18 %
+ swatch move       :    0.00 %
+ swap move         :    0.37 %
+ CBMC move         :   31.44 %
+ fluct. charge move:    0.00 %
+ expanded ens. move:    0.00 %
+ new EE move       :    0.00 %
+ atom trans. move  :    0.00 %
+ translation move  :   53.00 %
+ rotation move     :   15.00 %
+
+NAMELIST EXTERNAL_FIELD
+------------------------------------------
+Steele 10-4-3 slit pore
+On both sides of the simulation box (z = 0 & z = boxlz)
+Surface material bead type: 190
+Surface atom density:  0.11400 [Ang^-3]
+Surface layer spacing:  3.40000 [Ang]
+a1:  2.46000 [Ang]
+Electric field in z direction:     0.00000000         0.00000000     [V/A]
+
+READING CONFIGURATION FROM RESTART FILE
+------------------------------------------
+new maximum displacements read from restart-file
+   max atom trans. displacement:     0.010000    0.010000    0.010000
+   max volume displacement:   0.3975E+04  0.9350E+04
+
+box      #1
+   molecule type 1
+      max trans. displacement:     2.432707   2.432707   2.432707
+      max rot. displacement:       0.400000   0.400000   0.400000
+      max fluc. q displacement:    0.100000
+   molecule type 2
+      max trans. displacement:     1.413274   1.413274   1.413274
+      max rot. displacement:       1.357114   1.357114   1.357114
+      max fluc. q displacement:    0.100000
+   molecule type 3
+      max trans. displacement:     0.875872   0.875872   0.875872
+      max rot. displacement:       0.307473   0.307473   0.307473
+      max fluc. q displacement:    0.100000
+
+box      #2
+   molecule type 1
+      max trans. displacement:     5.919662   5.919662   5.919662
+      max rot. displacement:       0.400000   0.400000   0.400000
+      max fluc. q displacement:    0.100000
+   molecule type 2
+      max trans. displacement:     2.542752   2.542752   2.542752
+      max rot. displacement:       3.141500   3.141500   3.141500
+      max fluc. q displacement:    0.100000
+   molecule type 3
+      max trans. displacement:     1.378688   1.378688   1.378688
+      max rot. displacement:       0.502764   0.502764   0.502764
+      max fluc. q displacement:    0.100000
+
+reading new box size from restart-file
+ dimension box 1: a =    54.037467  b =    54.037467  c =    54.037467 rcut =   14.000000
+ dimension box 2: a =    56.977627  b =    56.977627  c =    56.977627 rcut =   14.000000
+
+Finished writing simulation box related info
+ 
+ sumup control
+ number of chains         984
+number of chains of type    1 PEC1           548
+number of chains of type    2 PEC4           319
+number of chains of type    3 PEC10          117
+ inter lj energy   -1330150.77667791     
+ intra lj energy   -44858.5858236983     
+ Tail correction   -41232.9558200374     
+ bond vibration    0.000000000000000E+000
+ bond bending       272641.583974352     
+ torsional          389466.852233750     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -712900.926293505     
+ 
+ box             1  initial v   =   -712900.926293505     
+ surf. tension :   box 1 =     -22.93571
+ pressure check:   box 1 =       4138.88
+ compress factor:  box 1 =       0.14436
+ 
+ sumup control
+ number of chains         841
+number of chains of type    1 PEC1           728
+number of chains of type    2 PEC4           105
+number of chains of type    3 PEC10            8
+ inter lj energy   -299894.343617167     
+ intra lj energy   -3161.74299339151     
+ Tail correction   -7910.75139237121     
+ bond vibration    0.000000000000000E+000
+ bond bending       38115.0295047090     
+ torsional          55337.1437402772     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -209603.913365572     
+ 
+ box             2  initial v   =   -209603.913365572     
+ surf. tension :   box 2 =       5.26242
+ pressure check:   box 2 =      19141.45
+ compress factor:  box 2 =       0.91572
+ 
+ +++++ start of markov chain +++++
+ 
+ Cycle   Total   Energy    Boxlength    Pressure     Compress    Molecules
+  1000  266000 -0.7367E+06    55.377      8626.2        0.31         583         330         121
+               -0.2030E+06    54.232     14624.6        0.64         693          94           4
+  2000  267000 -0.7690E+06    54.871     19331.6        0.66         587         339         121
+               -0.1794E+06    56.397     16061.9        0.81         689          85           4
+  3000  268000 -0.7386E+06    55.950     15706.6        0.56         605         342         119
+               -0.1774E+06    55.308     18901.3        0.92         671          82           6
+  4000  269000 -0.7679E+06    55.709     13350.4        0.46         625         347         115
+               -0.1840E+06    53.655     14628.6        0.67         651          77          10
+  5000  270000 -0.7362E+06    55.958      7635.6        0.27         624         329         122
+               -0.1829E+06    54.027     19562.1        0.89         652          95           3
+  6000  271000 -0.6856E+06    55.631     15733.9        0.56         618         320         116
+               -0.1846E+06    54.718     18673.0        0.86         658         104           9
+  7000  272000 -0.7742E+06    54.756     12815.4        0.44         604         321         121
+               -0.2003E+06    54.545     18750.2        0.85         672         103           4
+  8000  273000 -0.7439E+06    55.407      9458.4        0.33         618         329         117
+               -0.2026E+06    53.681     18800.8        0.83         658          95           8
+  9000  274000 -0.7425E+06    54.923     19303.5        0.67         587         337         114
+               -0.1902E+06    55.896     11441.5        0.55         689          87          11
+ 10000  275000 -0.7475E+06    54.831     19407.3        0.68         578         329         118
+               -0.2161E+06    54.125     19692.4        0.85         698          95           7
+ 11000  276000 -0.6939E+06    54.491     22910.6        0.79         594         318         113
+               -0.2173E+06    54.234     18466.0        0.80         682         106          12
+ 12000  277000 -0.7217E+06    54.386     10807.2        0.38         573         312         113
+               -0.2277E+06    54.990     18450.8        0.81         703         112          12
+ 13000  278000 -0.7195E+06    53.988     16720.2        0.57         569         313         114
+               -0.2156E+06    55.533     10606.8        0.48         707         111          11
+ 14000  279000 -0.7113E+06    54.200      9635.9        0.34         558         314         113
+               -0.2399E+06    55.546     15183.4        0.67         718         110          12
+ 15000  280000 -0.6799E+06    54.194     14238.8        0.50         564         304         116
+               -0.2100E+06    56.705     15815.3        0.75         712         120           9
+ 16000  281000 -0.6909E+06    53.676     25597.5        0.89         547         301         118
+               -0.2193E+06    56.724     14938.9        0.69         729         123           7
+ 17000  282000 -0.6510E+06    52.822     31552.8        1.10         518         282         116
+               -0.2755E+06    55.980     15466.5        0.65         758         142           9
+ 18000  283000 -0.7024E+06    52.461     16210.5        0.57         489         286         120
+               -0.2434E+06    58.646     11619.7        0.55         787         138           5
+ 19000  284000 -0.6877E+06    52.397     11610.3        0.40         491         295         116
+               -0.2476E+06    57.560     15057.4        0.68         785         129           9
+ 20000  285000 -0.7374E+06    53.224     12845.0        0.45         525         304         117
+               -0.2387E+06    56.256     18929.5        0.83         751         120           8
+ 21000  286000 -0.6677E+06    53.878     23777.8        0.85         547         289         120
+               -0.2229E+06    57.298     17346.7        0.82         729         135           5
+ 22000  287000 -0.7114E+06    52.356     17574.6        0.60         493         299         116
+               -0.2420E+06    57.736     13674.0        0.62         783         125           9
+ 23000  288000 -0.6700E+06    52.704     20471.0        0.73         472         306         115
+               -0.2226E+06    58.431     17389.3        0.81         804         118          10
+ 24000  289000 -0.6880E+06    53.100     14217.7        0.51         476         304         120
+               -0.2222E+06    58.780     16106.3        0.77         800         120           5
+ 25000  290000 -0.6938E+06    53.454      7164.5        0.25         518         306         119
+               -0.2345E+06    57.449     13840.7        0.65         758         118           6
+ 
+ +++++ end of markov chain +++++
+ 
+ ### Translations ###
+ 
+molecule typ = 1   PEC1        in box           1
+ x-dir: attempts = 2603759.0   ratio = 0.394   max.displ. = 0.2433E+01
+ y-dir: attempts = 2601025.0   ratio = 0.393   max.displ. = 0.2433E+01
+ z-dir: attempts = 2602868.0   ratio = 0.394   max.displ. = 0.2433E+01
+ 
+molecule typ = 2   PEC4        in box           1
+ x-dir: attempts = 1260789.0   ratio = 0.399   max.displ. = 0.1413E+01
+ y-dir: attempts = 1258567.0   ratio = 0.399   max.displ. = 0.1413E+01
+ z-dir: attempts = 1261385.0   ratio = 0.398   max.displ. = 0.1413E+01
+ 
+molecule typ = 3   PEC10       in box           1
+ x-dir: attempts =  410148.0   ratio = 0.404   max.displ. = 0.8759E+00
+ y-dir: attempts =  410441.0   ratio = 0.403   max.displ. = 0.8759E+00
+ z-dir: attempts =  408970.0   ratio = 0.406   max.displ. = 0.8759E+00
+ 
+molecule typ = 1   PEC1        in box           2
+ x-dir: attempts = 3323120.0   ratio = 0.419   max.displ. = 0.5920E+01
+ y-dir: attempts = 3321811.0   ratio = 0.419   max.displ. = 0.5920E+01
+ z-dir: attempts = 3322896.0   ratio = 0.419   max.displ. = 0.5920E+01
+ 
+molecule typ = 2   PEC4        in box           2
+ x-dir: attempts =  439957.0   ratio = 0.421   max.displ. = 0.2543E+01
+ y-dir: attempts =  439801.0   ratio = 0.422   max.displ. = 0.2543E+01
+ z-dir: attempts =  439439.0   ratio = 0.422   max.displ. = 0.2543E+01
+ 
+molecule typ = 3   PEC10       in box           2
+ x-dir: attempts =   25487.0   ratio = 0.404   max.displ. = 0.1379E+01
+ y-dir: attempts =   25510.0   ratio = 0.410   max.displ. = 0.1379E+01
+ z-dir: attempts =   25542.0   ratio = 0.406   max.displ. = 0.1379E+01
+ 
+ ### Rotations ###
+ 
+molecule typ = 1   PEC1        in box           1
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ 
+molecule typ = 2   PEC4        in box           1
+ x-dir: attempts = 1029568.0   ratio = 0.399   max.displ. = 0.1357E+01
+ y-dir: attempts = 1031740.0   ratio = 0.399   max.displ. = 0.1357E+01
+ z-dir: attempts = 1032649.0   ratio = 0.400   max.displ. = 0.1357E+01
+ 
+molecule typ = 3   PEC10       in box           1
+ x-dir: attempts =  837673.0   ratio = 0.405   max.displ. = 0.3075E+00
+ y-dir: attempts =  837461.0   ratio = 0.405   max.displ. = 0.3075E+00
+ z-dir: attempts =  838032.0   ratio = 0.406   max.displ. = 0.3075E+00
+ 
+molecule typ = 1   PEC1        in box           2
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ 
+molecule typ = 2   PEC4        in box           2
+ x-dir: attempts =  360541.0   ratio = 0.475   max.displ. = 0.3142E+01
+ y-dir: attempts =  360099.0   ratio = 0.476   max.displ. = 0.3142E+01
+ z-dir: attempts =  360654.0   ratio = 0.475   max.displ. = 0.3142E+01
+ 
+molecule typ = 3   PEC10       in box           2
+ x-dir: attempts =   52229.0   ratio = 0.411   max.displ. = 0.5028E+00
+ y-dir: attempts =   51742.0   ratio = 0.412   max.displ. = 0.5028E+00
+ z-dir: attempts =   52438.0   ratio = 0.413   max.displ. = 0.5028E+00
+ 
+ 
+ ### Configurational-bias ###
+ 
+molecule typ = 1    PEC1       in box 1
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+molecule typ = 1    PEC1       in box 2
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+molecule typ = 2    PEC4       in box 1
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1  955941.0  955931.0  764287.0    100.00     79.95
+        2  957450.0  957401.0  515132.0     99.99     53.80
+        3 1912473.0 1909100.0  621172.0     99.82     32.48
+molecule typ = 2    PEC4       in box 2
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1  333910.0  333910.0  287287.0    100.00     86.04
+        2  334842.0  334840.0  226713.0    100.00     67.71
+        3  667809.0  667737.0  348259.0     99.99     52.15
+molecule typ = 3    PEC10      in box 1
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1  863695.0  863692.0  686324.0    100.00     79.46
+        2  865098.0  865014.0  517065.0     99.99     59.77
+        3  864530.0  863533.0  364016.0     99.88     42.11
+        4  864939.0  860108.0  253192.0     99.44     29.27
+        5  865841.0  853449.0  177721.0     98.57     20.53
+        6  863423.0  840046.0  124512.0     97.29     14.42
+        7  864762.0  823790.0   84944.0     95.26      9.82
+        8  863761.0  793140.0   48719.0     91.82      5.64
+        9 1730489.0 1483493.0   51281.0     85.73      2.96
+molecule typ = 3    PEC10      in box 2
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1   53790.0   53790.0   45663.0    100.00     84.89
+        2   53397.0   53396.0   37159.0    100.00     69.59
+        3   53877.0   53863.0   29762.0     99.97     55.24
+        4   53683.0   53646.0   23037.0     99.93     42.91
+        5   53554.0   53449.0   17887.0     99.80     33.40
+        6   53494.0   53294.0   14463.0     99.63     27.04
+        7   53405.0   53069.0   11067.0     99.37     20.72
+        8   53780.0   53271.0    8271.0     99.05     15.38
+        9  107525.0  106057.0   12551.0     98.63     11.67
+ 
+ 
+ ### Volume change       ###
+ attempts = 41594.0   ratio = 0.300   max.displ. = 0.3975E+04   avg.acc.displ. = 0.9237E+03
+ attempts = 41728.0   ratio = 0.338   max.displ. = 0.9350E+04   avg.acc.displ. = 0.2433E+04
+
+### Molecule swap       ###
+
+molecule typ = 1   PEC1      
+between box 1 and 2 into box 1   uattempts = 21767 attempts = 21767   accepted = 8345
+ suc.growth % = 99.665   accepted % = 38.338
+between box 1 and 2 into box 2   uattempts = 22005 attempts = 22005   accepted = 8375
+ suc.growth % =100.000   accepted % = 38.060
+number of times move in: 0  accepted = 0
+number of times move out: 0  accepted = 0
+molecule typ = 2   PEC4      
+between box 1 and 2 into box 1   uattempts = 15395 attempts = 15395   accepted = 2420
+ suc.growth % = 98.298   accepted % = 15.719
+between box 1 and 2 into box 2   uattempts = 15409 attempts = 15409   accepted = 2433
+ suc.growth % = 99.987   accepted % = 15.789
+number of times move in: 0  accepted = 0
+number of times move out: 0  accepted = 0
+molecule typ = 3   PEC10     
+between box 1 and 2 into box 1   uattempts = 47520 attempts = 47389   accepted = 586
+ suc.growth % = 73.715   accepted % =  1.233
+between box 1 and 2 into box 2   uattempts = 47773 attempts = 47773   accepted = 584
+ suc.growth % = 99.117   accepted % =  1.222
+number of times move in: 0  accepted = 0
+number of times move out: 0  accepted = 0
+
+### Molecule swatch     ###
+
+ 
+ ### Charge Fluctuation  ###
+ 
+ 
+ ### Expanded Ensemble Move  ###
+ 
+
+New Biasing Potential
+
+molecule  1:   0.00000000      0.00000000    
+molecule  2:   0.00000000      0.00000000    
+molecule  3:   0.00000000      0.00000000     
+ 
+ sumup control
+ number of chains         943
+number of chains of type    1 PEC1           518
+number of chains of type    2 PEC4           306
+number of chains of type    3 PEC10          119
+ inter lj energy   -1296927.35456858     
+ intra lj energy   -44775.9094983596     
+ Tail correction   -40601.0284017684     
+ bond vibration    0.000000000000000E+000
+ bond bending       267955.038475240     
+ torsional          379939.227285379     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -693808.998306322     
+ 
+ sumup control
+ number of chains         882
+number of chains of type    1 PEC1           758
+number of chains of type    2 PEC4           118
+number of chains of type    3 PEC10            6
+ inter lj energy   -326328.584607328     
+ intra lj energy   -2425.12987924659     
+ Tail correction   -8508.37357296769     
+ bond vibration    0.000000000000000E+000
+ bond bending       40971.2114208292     
+ torsional          53301.6081937000     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -234480.894872045     
+ 
+ vstart       =      -712900.9262935055      -209603.9133655724
+ vend         =      -693808.9983063219      -234480.8948720449
+ vbox         =      -693808.9982899837      -234480.8948725236
+ 
+ Averages and fluctuations                                  Box  1       Box  2
+ 
+ pressure                                      [kPa] =     16357.58     16270.93
+ pressure                         [simulation units] =     1.184775     1.178499
+ surface tension                              [mN/m] =       0.0477      -0.0651
+ compress factor                                     =      0.56926      0.74951
+ chem. potential of type   1 PEC1                [K] =    -3396.089    -3393.723
+ chem. potential of type   2 PEC4                [K] =    -2846.074    -2875.659
+ chem. potential of type   3 PEC10               [K] =     3339.944     3409.273
+ boxlength                                       [A] =       54.161       56.040
+ boxlength                                       [A] =       54.161       56.040
+ boxlength                                       [A] =       54.161       56.040
+ no. of chains of type     1 PEC1                    =      560.552      715.448
+ no. of chains of type     2 PEC4                    =      314.438      109.562
+ no. of chains of type     3 PEC10                   =      117.687        7.313
+ molar volume                             [cm^3/mol] =       96.501      127.422
+ specific density                           [g/cm^3] =     0.460059     0.178013
+ number density of type    1 PEC1       [chain/nm^3] =      3.52001      4.06392
+ number density of type    2 PEC4       [chain/nm^3] =      1.97831      0.62045
+ number density of type    3 PEC10      [chain/nm^3] =      0.74216      0.04177
+ molfraction of type       1 PEC1                    =    0.5639644    0.8601634
+ molfraction of type       2 PEC4                    =    0.3170567    0.1310548
+ molfraction of type       3 PEC10                   =    0.1189790    0.0087818
+ mean sete length of type  1 PEC1              [A^2] =        0.000        0.000
+ mean sete length of type  2 PEC4              [A^2] =       13.552       13.547
+ mean sete length of type  3 PEC10             [A^2] =       93.370       92.365
+ 
+ Total energy [K per system and kJ/mol per chain] =    -724597.12    -214308.33      -6.08      -2.14
+ Inter LJ     [K per system and kJ/mol per chain] =   -1313460.63    -312205.96     -11.02      -3.11
+ Tail  LJ     [K per system and kJ/mol per chain] =     -41059.06      -8274.19      -0.34      -0.08
+ Intra LJ     [K per system and kJ/mol per chain] =     -44899.83      -2803.10      -0.38      -0.03
+ Stretch      [K per system and kJ/mol per chain] =          0.00          0.00       0.00       0.00
+ Bond bending [K per system and kJ/mol per chain] =     261371.09      46135.24       2.19       0.46
+ Torsion      [K per system and kJ/mol per chain] =     372392.26      54565.48       3.13       0.54
+ Coulomb      [K per system and kJ/mol per chain] =          0.00          0.00       0.00       0.00
+ External pot [K per system and kJ/mol per chain] =          0.00          0.00       0.00       0.00
+ 3-body Garo  [K per system and kJ/mol per chain] =          0.00          0.00       0.00       0.00
+ Fluc Q       [K per system and kJ/mol per chain] =          0.00          0.00       0.00       0.00
+ 
+ fluctuation in <vtot> =    37672.50    26436.05
+ 
+ type  box       vinter       vintra         vtor        vbend        vtail
+    1    1      0.00000      0.00000      0.00000      0.00000      0.00000
+    1    2      0.00000      0.00000      0.00000      0.00000      0.00000
+    2    1      0.00000      0.00000      0.00000      0.00000      0.00000
+    2    2      0.00000      0.00000      0.00000      0.00000      0.00000
+    3    1      0.00000      0.00000      0.00000      0.00000      0.00000
+    3    2      0.00000      0.00000      0.00000      0.00000      0.00000
+ 
+ H_vap      [kJ/mol] btwn box    1 and  2 =         4.4497         0.2100         0.0429
+ H_vap LJ  [kJ/mol] btwn box     1 and  2 =         9.0300         0.4627         0.0945
+ H_vap Coul [kJ/mol] btwn box    1 and  2 =         0.5045         0.0541         0.0111
+ pdV        [kJ/mol] btwn box    1 and  2 =         0.5045         0.0541         0.0111
+ CED [cal/cc]   btwn box         1 and  2 =         9.7747         0.4342         0.0886
+ CED_LJ[cal/cc] btwn box         1 and  2 =        21.1155         1.0020         0.2045
+ CED_Coul[cal/cc] btwn box       1 and  2 =         0.0000         0.0000         0.0000
+ HSP [(cal/cc)^1/2]  btwn box    1 and  2 =         3.1236         0.0692         0.0141
+ HSP_LJ[(cal/cc)^1/2] btwn box   1 and  2 =         4.5928         0.1083         0.0221
+ HSP_Cou[(cal/cc)^1/2] btwn box  1 and  2 =         0.0000         0.0000         0.0000
+ 
+ specific density box  1 =  0.46006E+00  0.92166E-02  0.18813E-02
+ specific density box  2 =  0.17801E+00  0.89787E-02  0.18328E-02
+ system volume    box  1 =  0.15906E+06  0.87855E+04  0.17933E+04
+ system volume    box  2 =  0.17634E+06  0.11408E+05  0.23287E+04
+ pressure         box  1 =   16358.       577.32       117.84    
+ pressure         box  2 =   16271.       254.74       51.999    
+ surface tension  box  1 =      0.04772      2.56080      0.52272
+ surface tension  box  2 =     -0.06509      1.06781      0.21797
+ compressibility  box  1 =      0.56926      0.02005      0.00409
+ compressibility  box  2 =      0.74951      0.02413      0.00493
+ 
+ Total energy     box  1 = -0.72460E+06  0.27924E+05  0.56999E+04
+ Inter LJ         box  1 = -0.13135E+07  0.41360E+05  0.84425E+04
+ Tail  LJ         box  1 = -0.41059E+05  0.11627E+04  0.23733E+03
+ Intra LJ         box  1 = -0.44900E+05  0.82122E+03  0.16763E+03
+ Stretch          box  1 =  0.00000E+00  0.00000E+00  0.00000E+00
+ Bond bending     box  1 =  0.26137E+06  0.69944E+04  0.14277E+04
+ Torsion          box  1 =  0.37239E+06  0.80472E+04  0.16426E+04
+ Coulomb          box  1 =  0.00000E+00  0.00000E+00  0.00000E+00
+ External pot     box  1 =  0.00000E+00  0.00000E+00  0.00000E+00
+ 3-body Garo      box  1 =  0.00000E+00  0.00000E+00  0.00000E+00
+ Fluc Q           box  1 =  0.00000E+00  0.00000E+00  0.00000E+00
+ Total energy     box  2 = -0.21431E+06  0.22227E+05  0.45371E+04
+ Inter LJ         box  2 = -0.31221E+06  0.35976E+05  0.73435E+04
+ Tail  LJ         box  2 = -0.82742E+04  0.98706E+03  0.20148E+03
+ Intra LJ         box  2 = -0.28031E+04  0.80669E+03  0.16466E+03
+ Stretch          box  2 =  0.00000E+00  0.00000E+00  0.00000E+00
+ Bond bending     box  2 =  0.46135E+05  0.67318E+04  0.13741E+04
+ Torsion          box  2 =  0.54565E+05  0.84853E+04  0.17320E+04
+ Coulomb          box  2 =  0.00000E+00  0.00000E+00  0.00000E+00
+ External pot     box  2 =  0.00000E+00  0.00000E+00  0.00000E+00
+ 3-body Garo      box  2 =  0.00000E+00  0.00000E+00  0.00000E+00
+ Fluc Q           box  2 =  0.00000E+00  0.00000E+00  0.00000E+00
+ 
+ Enthalpy Inst.[kJ/mol] for box  1 =      -4.5040       0.1893       0.0386
+ Enthalpy Ext. [kJ/mol] for box  1 =      -4.5146       0.1742       0.0356
+ Enthalpy Inst.[kJ/mol] for box  2 =      -0.0598       0.1596       0.0326
+ Enthalpy Ext. [kJ/mol] for box  2 =      -0.0634       0.1475       0.0301
+ 
+ 
+ chemical potential  itype  1 box  1 =     -3395.561       19.308        3.941
+ chemical potential  itype  1 box  2 =     -3393.701        8.519        1.739
+ chemical potential  itype  2 box  1 =     -2841.758       57.393       11.715
+ chemical potential  itype  2 box  2 =     -2874.231       27.610        5.636
+ chemical potential  itype  3 box  1 =      3598.824      327.927       66.938
+ chemical potential  itype  3 box  2 =      3423.060       94.558       19.302
+ mean sete length    itype  1 box  1 =         0.000        0.000        0.000
+ mean sete length    itype  1 box  2 =         0.000        0.000        0.000
+ mean sete length    itype  2 box  1 =        13.552        0.016        0.003
+ mean sete length    itype  2 box  2 =        13.546        0.023        0.005
+ mean sete length    itype  3 box  1 =        93.369        0.259        0.053
+ mean sete length    itype  3 box  2 =        92.404        0.469        0.096
+ number density      itype  1 box  1 =   0.35200E+01  0.11284E+00  0.23034E-01
+ number density      itype  1 box  2 =   0.40639E+01  0.67140E-01  0.13705E-01
+ number density      itype  2 box  1 =   0.19783E+01  0.48146E-01  0.98278E-02
+ number density      itype  2 box  2 =   0.62045E+00  0.67184E-01  0.13714E-01
+ number density      itype  3 box  1 =   0.74216E+00  0.39932E-01  0.81512E-02
+ number density      itype  3 box  2 =   0.41775E-01  0.12241E-01  0.24986E-02
+ mole fraction       itype  1 box  1 =     0.5639644    0.0142031    0.0028992
+ mole fraction       itype  1 box  2 =     0.8601634    0.0126255    0.0025772
+ mole fraction       itype  2 box  1 =     0.3170567    0.0088995    0.0018166
+ mole fraction       itype  2 box  2 =     0.1310548    0.0118585    0.0024206
+ mole fraction       itype  3 box  1 =     0.1189790    0.0071699    0.0014635
+ mole fraction       itype  3 box  2 =     0.0087818    0.0024683    0.0005038
+ Ostwald Coefficient itype  1 between box  2 and  1 =         0.866160        0.031238
+ Free Enrgy of Trans itype  1 between box  2 and  1 [kJ/mol] =        0.397825        0.099853
+ Ostwald Coefficient itype  2 between box  2 and  1 =         3.188497        0.353871
+ Free Enrgy of Trans itype  2 between box  2 and  1 [kJ/mol] =       -3.210463        0.307283
+ Ostwald Coefficient itype  3 between box  2 and  1 =        17.765907        5.292725
+ Free Enrgy of Trans itype  3 between box  2 and  1 [kJ/mol] =       -7.966374        0.824841
+ 
+ 
+ -----block averages ------
+  ------------ box:  1
+ block    energy     density    pressure       Z        surf ten   mol fracs
+   1 -0.7414E+06  0.4556E+00  0.1667E+05  0.5829E+00  0.1193E+01  0.5603E+00  0.3254E+00  0.1143E+00
+   2 -0.7558E+06  0.4537E+00  0.1595E+05  0.5610E+00 -0.3243E+00  0.5643E+00  0.3182E+00  0.1176E+00
+   3 -0.7736E+06  0.4598E+00  0.1671E+05  0.5759E+00 -0.6870E+00  0.5653E+00  0.3208E+00  0.1138E+00
+   4 -0.7667E+06  0.4524E+00  0.1679E+05  0.5804E+00  0.9539E+00  0.5730E+00  0.3158E+00  0.1111E+00
+   5 -0.7744E+06  0.4487E+00  0.1661E+05  0.5702E+00 -0.4565E+00  0.5832E+00  0.3080E+00  0.1089E+00
+   6 -0.7481E+06  0.4480E+00  0.1635E+05  0.5645E+00 -0.9792E+00  0.5841E+00  0.3047E+00  0.1112E+00
+   7 -0.7423E+06  0.4498E+00  0.1637E+05  0.5654E+00  0.2008E+01  0.5832E+00  0.3040E+00  0.1128E+00
+   8 -0.7406E+06  0.4497E+00  0.1652E+05  0.5795E+00 -0.1691E+01  0.5717E+00  0.3133E+00  0.1150E+00
+   9 -0.7449E+06  0.4504E+00  0.1668E+05  0.5766E+00  0.3427E+01  0.5791E+00  0.3094E+00  0.1115E+00
+  10 -0.7446E+06  0.4545E+00  0.1628E+05  0.5646E+00  0.5165E+00  0.5690E+00  0.3179E+00  0.1131E+00
+  11 -0.7358E+06  0.4589E+00  0.1628E+05  0.5631E+00 -0.3698E+01  0.5651E+00  0.3197E+00  0.1152E+00
+  12 -0.7231E+06  0.4526E+00  0.1718E+05  0.5874E+00 -0.3935E+01  0.5844E+00  0.3038E+00  0.1118E+00
+  13 -0.7140E+06  0.4572E+00  0.1537E+05  0.5329E+00  0.4861E+01  0.5670E+00  0.3178E+00  0.1153E+00
+  14 -0.7276E+06  0.4618E+00  0.1642E+05  0.5666E+00 -0.1957E+00  0.5639E+00  0.3194E+00  0.1167E+00
+  15 -0.7143E+06  0.4587E+00  0.1591E+05  0.5526E+00  0.4753E+01  0.5648E+00  0.3181E+00  0.1171E+00
+  16 -0.6999E+06  0.4543E+00  0.1680E+05  0.5864E+00 -0.3243E+01  0.5751E+00  0.3048E+00  0.1201E+00
+  17 -0.7006E+06  0.4656E+00  0.1580E+05  0.5458E+00 -0.2086E+01  0.5665E+00  0.3108E+00  0.1226E+00
+  18 -0.6748E+06  0.4734E+00  0.1542E+05  0.5414E+00 -0.3033E+01  0.5523E+00  0.3151E+00  0.1327E+00
+  19 -0.6826E+06  0.4710E+00  0.1503E+05  0.5289E+00 -0.6637E-01  0.5519E+00  0.3169E+00  0.1312E+00
+  20 -0.6962E+06  0.4712E+00  0.1593E+05  0.5565E+00  0.1498E+01  0.5489E+00  0.3248E+00  0.1263E+00
+  21 -0.6865E+06  0.4583E+00  0.1716E+05  0.6041E+00 -0.6256E-01  0.5634E+00  0.3136E+00  0.1231E+00
+  22 -0.6994E+06  0.4673E+00  0.1596E+05  0.5606E+00  0.8578E-01  0.5532E+00  0.3205E+00  0.1263E+00
+  23 -0.6959E+06  0.4756E+00  0.1657E+05  0.5792E+00 -0.1418E+01  0.5411E+00  0.3307E+00  0.1282E+00
+  24 -0.7169E+06  0.4771E+00  0.1756E+05  0.6172E+00  0.5769E+01  0.5337E+00  0.3380E+00  0.1283E+00
+  25 -0.7148E+06  0.4758E+00  0.1663E+05  0.5876E+00 -0.1997E+01  0.5345E+00  0.3350E+00  0.1304E+00
+  ------------ box:  2
+ block    energy     density    pressure       Z        surf ten   mol fracs
+   1 -0.2000E+06  0.1708E+00  0.1665E+05  0.7779E+00  0.7750E-01  0.8762E+00  0.1136E+00  0.1016E-01
+   2 -0.1821E+06  0.1591E+00  0.1663E+05  0.8037E+00 -0.3593E-01  0.8801E+00  0.1172E+00  0.2698E-02
+   3 -0.1801E+06  0.1603E+00  0.1634E+05  0.7945E+00  0.1390E+01  0.8817E+00  0.1116E+00  0.6709E-02
+   4 -0.1793E+06  0.1650E+00  0.1623E+05  0.7746E+00 -0.5538E+00  0.8787E+00  0.1135E+00  0.7881E-02
+   5 -0.1781E+06  0.1686E+00  0.1631E+05  0.7660E+00 -0.1407E+01  0.8749E+00  0.1178E+00  0.7322E-02
+   6 -0.1911E+06  0.1746E+00  0.1676E+05  0.7803E+00 -0.2262E+01  0.8618E+00  0.1300E+00  0.8179E-02
+   7 -0.2043E+06  0.1826E+00  0.1601E+05  0.7273E+00  0.2832E+00  0.8545E+00  0.1364E+00  0.9129E-02
+   8 -0.1946E+06  0.1703E+00  0.1618E+05  0.7584E+00 -0.1518E+01  0.8691E+00  0.1244E+00  0.6530E-02
+   9 -0.1965E+06  0.1782E+00  0.1627E+05  0.7479E+00 -0.2555E+01  0.8631E+00  0.1272E+00  0.9688E-02
+  10 -0.1977E+06  0.1751E+00  0.1647E+05  0.7574E+00 -0.2324E+00  0.8711E+00  0.1193E+00  0.9531E-02
+  11 -0.2176E+06  0.1832E+00  0.1642E+05  0.7322E+00  0.3630E+00  0.8658E+00  0.1237E+00  0.1050E-01
+  12 -0.2189E+06  0.1925E+00  0.1553E+05  0.6942E+00  0.1109E+01  0.8441E+00  0.1421E+00  0.1378E-01
+  13 -0.2193E+06  0.1858E+00  0.1622E+05  0.7345E+00  0.2019E+01  0.8549E+00  0.1317E+00  0.1339E-01
+  14 -0.2221E+06  0.1844E+00  0.1614E+05  0.7281E+00  0.4763E+00  0.8586E+00  0.1297E+00  0.1170E-01
+  15 -0.2134E+06  0.1780E+00  0.1606E+05  0.7502E+00 -0.5843E+00  0.8570E+00  0.1316E+00  0.1142E-01
+  16 -0.2223E+06  0.1830E+00  0.1601E+05  0.7366E+00  0.1154E+00  0.8440E+00  0.1478E+00  0.8242E-02
+  17 -0.2372E+06  0.1908E+00  0.1637E+05  0.7306E+00 -0.1256E+00  0.8417E+00  0.1480E+00  0.1035E-01
+  18 -0.2526E+06  0.1870E+00  0.1604E+05  0.7239E+00  0.4479E+00  0.8406E+00  0.1527E+00  0.6720E-02
+  19 -0.2417E+06  0.1801E+00  0.1635E+05  0.7553E+00  0.9668E+00  0.8456E+00  0.1482E+00  0.6117E-02
+  20 -0.2331E+06  0.1817E+00  0.1598E+05  0.7339E+00  0.8001E-01  0.8516E+00  0.1386E+00  0.9871E-02
+  21 -0.2431E+06  0.1891E+00  0.1651E+05  0.7381E+00 -0.2031E+00  0.8451E+00  0.1451E+00  0.9840E-02
+  22 -0.2413E+06  0.1863E+00  0.1653E+05  0.7336E+00 -0.3322E+00  0.8523E+00  0.1398E+00  0.7854E-02
+  23 -0.2402E+06  0.1824E+00  0.1619E+05  0.7372E+00  0.1617E+01  0.8545E+00  0.1356E+00  0.9864E-02
+  24 -0.2227E+06  0.1706E+00  0.1631E+05  0.7625E+00 -0.2023E+00  0.8699E+00  0.1233E+00  0.6762E-02
+  25 -0.2283E+06  0.1709E+00  0.1626E+05  0.7590E+00 -0.5616E+00  0.8672E+00  0.1275E+00  0.5307E-02
+ Program ended at 2019-06-17 22:18:34.723
